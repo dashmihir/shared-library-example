@@ -1,5 +1,15 @@
 #!/usr/bin/env groovy
 
 def call(Map config = [:]) {
-  echo "Hello, ${config.name}"
+      pipeline {
+        agent any
+        stages {
+            stage('checkout git') {
+                steps {
+                    git branch: ${config.branch}, credentialsId: ${config.credentialsId}, url: ${config.scmUrl}
+                }
+            }
+        }
+      }  
+
 }
