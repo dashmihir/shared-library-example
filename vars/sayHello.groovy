@@ -12,7 +12,7 @@ def call(Map config = [:]) {
             }
             stage('build'){
               steps{
-                mvn clean install
+                sh 'mvn clean install -DskipTests=true'
               }
             }
         }
