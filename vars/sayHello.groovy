@@ -7,6 +7,7 @@ def call(Map config = [:]) {
             stage('checkout git') {
                 steps {
                     git branch: ${config.branch}, credentialsId: ${config.credentialsId}, url: ${config.scmUrl}
+                    ``sh "ls -lat"
                 }
             }
         }
