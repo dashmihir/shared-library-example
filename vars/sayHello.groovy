@@ -10,6 +10,11 @@ def call(Map config = [:]) {
                     sh "ls -ltr"
                 }
             }
+            stage('build'){
+              steps{
+                mvn clean install
+              }
+            }
         }
       }  
 
