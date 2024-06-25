@@ -6,7 +6,7 @@ def call(Map config = [:]) {
         stages {
             stage('checkout git') {
                 steps {
-                    git branch: ${config.branch}, credentialsId: ${config.credentialsId}, url: ${config.scmUrl}
+                    git branch: config.branch, credentialsId: config.credentialsId, url: config.scmUrl
                    
                 }
             }
